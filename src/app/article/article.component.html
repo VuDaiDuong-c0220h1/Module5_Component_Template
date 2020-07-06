@@ -1,0 +1,16 @@
+<p>{{article.title}}
+  <button (click)="showContent()">Show Content</button>
+  <button (click)="gotoLink()">Go to Link</button>
+  <button (click)="showEdit()">Chỉnh sửa</button>
+</p>
+<app-likes></app-likes>
+<div *ngIf="isShow">
+  {{article.content}}
+</div>
+<div *ngIf="isShowEdit">
+  <textarea [(ngModel)]="article.title" cols="100"></textarea>
+  <textarea [(ngModel)]="article.content" cols="100"></textarea>
+  <textarea [(ngModel)]="article.link" cols="100"></textarea>
+  <button (click)="edit()">Chỉnh sửa</button>
+</div>
+
